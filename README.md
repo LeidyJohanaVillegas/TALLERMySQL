@@ -6,7 +6,7 @@ Este taller está diseñado para profundizar en el manejo y optimización de bas
 
 
 ## Base de datos
-
+```
 CREATE DATABASE vtaszfs;
 USE vtaszfs;
 
@@ -146,9 +146,10 @@ CREATE TABLE Ubicaciones(
   código_postal VARCHAR(10),
   país VARCHAR(50)
 );
+```
 
 ## Datos ingresados
-
+```
 INSERT INTO UbicacionClientes (direccion, ciudad, estado, codigo_postal, pais) VALUES
 ('Calle 123', 'Bogotá', 'Cundinamarca', '110111', 'Colombia'),
 ('Av. Central 456', 'Medellín', 'Antioquia', '050021', 'Colombia');
@@ -217,13 +218,13 @@ INSERT INTO Ubicaciones (entidad_tipo, entidad_id, dirección, ciudad, estado, c
 ('Cliente', 2, 'Av. Central 456', 'Medellín', 'Antioquia', '050021', 'Colombia'),
 ('Proveedor', 1, 'Carrera 10 #12-34', 'Bogotá', 'Cundinamarca', '110111', 'Colombia'),
 ('Proveedor', 2, 'Av. Norte #45-67', 'Medellín', 'Antioquia', '050021', 'Colombia');
-
+```
 
 
 ## EJERCICIOS 
 
 #1. NORMALIZACION:
-
+```
 1.1. Crear una tabla HistorialPedidos que almacene cambios en los pedidos.
 RTA:
 --Tabla HistorialPedidos
@@ -515,10 +516,10 @@ CREATE TABLE Ubicaciones(
 );
 Explicación:
 Evita duplicar tablas con la misma estructura, facilita las consultas generales de ubicaciones y mejora la escalabilidad del modelo.
-
+```
 
 #2. JOINS:
-
+```
 2.1. Obtener la lista de todos los pedidos con los nombres de clientes usando INNER JOIN 
 RTA:
 SELECT 
@@ -691,10 +692,10 @@ JOIN TiposProductos tp ON p.tipo_id = tp.id;
 |           2 | Lavadora Samsung 18kg | 1650000.00 | Distribuciones Norte | Av. Norte #45-67    | Lavadoras     | Lavadoras automáticas  |
 |           1 | Lavadora LG 20kg      | 1800000.00 | Proveedora Andina    | Carrera 10 #12-34   | Lavadoras     | Lavadoras automáticas  |
 +-------------+-----------------------+------------+----------------------+---------------------+---------------+------------------------+
-
+```
 
 # 3. CONSULTAS SIMPLES
-
+```
 3.1. Seleccionar todos los productos con precio mayor a $50. 
 RTA:
 SELECT id, nombre, precio
@@ -824,9 +825,9 @@ LIMIT 1;
 +----+--------+---------------+
 |  1 | Juan   |             1 |
 +----+--------+---------------+
-
+```
 # 4. Consultas Multitabla:
-
+```
 4.1. Listar todos los pedidos y el cliente asociado. 
 RTA:
 SELECT p.id AS id_pedido, p.fecha, c.id AS id_cliente, c.nombre AS nombre_cliente
@@ -957,11 +958,10 @@ GROUP BY pr.proveedor_id, prov.nombre;
 |            1 | Proveedora Andina    |    1800000.00 |
 |            2 | Distribuciones Norte |    3300000.00 |
 +--------------+----------------------+---------------+
-
+```
 
 ##Estructura base de datos 
-
-mysql> SHOW TABLES;
+```
 +-------------------+
 | Tables_in_vtaszfs |
 +-------------------+
@@ -982,7 +982,7 @@ mysql> SHOW TABLES;
 | ubicacionclientes |
 | ubicaciones       |
 +-------------------+
-
+```
 
 ## Realizado por: Leidy Johana Niño Villegas.
 
